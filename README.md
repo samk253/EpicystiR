@@ -1,115 +1,122 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2821
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww31680\viewh19360\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# 🧪 EpicystiR: Seroprevalence of Human Cysticercosis in Rural Areas of Southeastern Côte d'Ivoire
 
-\f0\fs24 \cf0 # EpicystiR: S\'e9ropr\'e9valence de la cysticercose humaine en milieu rural du sud-est de la C\'f4te d'Ivoire\
-\
-## Description du Projet\
-\
-Ce projet pr\'e9sente une \'e9tude sur la s\'e9ropr\'e9valence de la cysticercose humaine dans les zones rurales des d\'e9partements de Dabou et Agboville en C\'f4te d'Ivoire. Les donn\'e9es ont \'e9t\'e9 collect\'e9es \'e0 travers des enqu\'eates transversales bas\'e9es sur la population.\
-\
-## Contenu du D\'e9p\'f4t\
-\
-### Bases de Donn\'e9es\
-\
-1. **EpicystiR_Dabou.csv**: Donn\'e9es collect\'e9es dans le d\'e9partement de Dabou.\
-2. **EpicystiR_Agboville.csv**: Donn\'e9es collect\'e9es dans le d\'e9partement d'Agboville.\
-3. **EpicystiR_Total.csv**: Donn\'e9es combin\'e9es des deux d\'e9partements.\
-4. **EpicystiR_Env.csv**: Donn\'e9es d\'92observation de environnement imm\'e9diat des m\'e9nages visit\'e9s lors de enqu\'eates.\
-\
-### Scripts d'Analyse\
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 - **EpicystyR_Dabou_Code analyse.do**: Script d'analyse pour les donn\'e9es de Dabou.\
-- **EpicystyR_Agboville_Code analyse.do**: Script d'analyse pour les donn\'e9es d'Agboville.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 - **EpicystiR_Total_Env_code analyse.do**: Script d'analyse pour les donn\'e9es combin\'e9es et pour celles de l\'92observation de l\'92environnement des m\'e9nages.\
-\
-### Dictionnaires de Donn\'e9es\
-\
-#### EpicystiR_Dabou et EpicystiR_Agboville\
-\
-| Variable Name | Variable Label                      |\
-|---------------|-------------------------------------|\
-| id            | Identifier number                  |\
-| dte           | Survey's date                      |\
-| village       | Village                            |\
-| grap          | Cluster                            |\
-| spref/zone    | Area of residence                  |\
-| sexe          | Sex                                |\
-| age           | Age                                |\
-| age_cat       | Age group                          |\
-| ancien        | Length of time in village          |\
-| etude         | Level of education                 |\
-| instruit      | Educated                           |\
-| muslim        | Muslim religion                   |\
-| cephal        | Recurrent headaches                |\
-| crisepi       | Concept of epileptic seizure       |\
-| epifam        | Concept of epilepsy in the family  |\
-| vers          | Concept of history of intestinal worms |\
-| depara        | History of taking anti-parasitic   |\
-| tenia         | Knowledge about tapeworm           |\
-| cmodet        | Knowledge of tapeworm transmission |\
-| cyst          | Awareness of cysticercosis         |\
-| lmain         | Hand washing                       |\
-| pleinair      | Open-air defecation                |\
-| typ_eau       | Tap water consumption              |\
-| pluie         | Rainwater consumption              |\
-| lavcrudi      | Washing raw vegetables before consumption |\
-| cporc         | Pork consumption                   |\
-| prelev        | Blood collected                    |\
-| elisa         | ELISA test                         |\
-| wb            | Western Blot test                  |\
-| cysti         | Cysticercosis serology             |\
-| pds           | Sampling weight                    |\
-| t_grap        | Number of persons in the cluster   |\
-| t_vilag       | Village's population               |\
-\
-#### EpicystiR_Total\
-\
-| Variable Name | Variable Label                      |\
-|---------------|-------------------------------------|\
-| id            | Identifier number                  |\
-| dte           | Survey's date                      |\
-| departement   | Department                         |\
-| zone2         | Area of residence                  |\
-| age           | Age                                |\
-| age_cat       | Age group                          |\
-| sexe          | Sex                                |\
-| instruit      | Educated                           |\
-| etude         | Level of education                 |\
-| muslim        | Muslim religion                   |\
-| ancien        | Length of time in village          |\
-| lmain         | Hand washing                       |\
-| lavcrudi      | Washing raw vegetables before consumption |\
-| typ_eau       | Tap water consumption              |\
-| pluie         | Rainwater consumption              |\
-| cporc         | Pork consumption                   |\
-| pleinair      | Open-air defecation                |\
-| cysti         | Cysticercosis serology             |\
-\
-#### EpicystiR_Env\
-\
-| Variable Name | Variable Label                      |\
-|---------------|-------------------------------------|\
-| idf           | Household's identifier              |\
-| dte           | Survey's date                      |\
-| departement   | Department                         |\
-| vilag         | Village                            |\
-| resident      | Number of household members        |\
-| potable       | Presence of drinking water supply point |\
-| main          | Presence of hand-washing facility   |\
-| latrine       | Presence of latrines in household   |\
-| ordures       | Presence of wild garbage dumps      |\
-| porcheri      | Nearby pig farm                    |\
-\
-## Instructions d'Utilisation\
-\
-1. **Cloner le D\'e9p\'f4t**:\
-   ```bash\
-   git clone https://github.com/votre-utilisateur/EpicystiR.git\
-   cd EpicystiR\
-}
+## 📘 Project Description
+
+**EpicystiR** is a research project focused on the **seroprevalence of human cysticercosis** in rural areas of **Dabou** and **Agboville** department in Côte d’Ivoire.  
+Data were collected through **population-based cross-sectional surveys**.
+
+---
+
+## 📁 Repository Content
+
+### 🗃️ Data Files
+
+- `EpicystiR_Dabou.csv`: Data collected in the Dabou department.
+- `EpicystiR_Agboville.csv`: Data collected in the Agboville department.
+- `EpicystiR_Total.csv`: Combined data from both departments.
+- `EpicystiR_Env.csv`: Environmental observations around surveyed households.
+
+### 📜 Analysis Scripts
+
+- `EpicystyR_Dabou_Code analyse.do`: Analysis of Dabou data.
+- `EpicystyR_Agboville_Code analyse.do`: Analysis of Agboville data.
+- `EpicystiR_Total_Env_code analyse.do`: Combined data and environmental observations' data.
+
+---
+
+## 📖 Data Dictionaries
+
+### 🧾 Dabou & Agboville
+
+| Variable Name  | Description                                 |
+|----------------|---------------------------------------------|
+| `id`           | Participant identifier                      |
+| `dte`          | Survey date                                 |
+| `village`      | Village                                     |
+| `grap`         | Cluster                                     |
+| `spref/zone`   | Area of residence                           |
+| `sexe`         | Sex                                          |
+| `age`          | Age                                         |
+| `age_cat`      | Age group                                   |
+| `ancien`       | Time living in village                      |
+| `etude`        | Level of education                          |
+| `instruit`     | Literacy                                    |
+| `muslim`       | Muslim religion                             |
+| `cephal`       | Frequent headaches                          |
+| `crisepi`      | Awareness of epileptic seizures             |
+| `epifam`       | Epilepsy in the family                      |
+| `vers`         | History of intestinal worms                 |
+| `depara`       | Antiparasitic treatment history             |
+| `tenia`        | Knowledge about tapeworm                    |
+| `cmodet`       | Knowledge of tapeworm transmission          |
+| `cyst`         | Awareness of cysticercosis                  |
+| `lmain`        | Handwashing habit                           |
+| `pleinair`     | Open-air defecation                             |
+| `typ_eau`      | Tap water consumption                       |
+| `pluie`        | Rainwater consumption                       |
+| `lavcrudi`     | Washing raw vegetables                      |
+| `cporc`        | Pork consumption                            |
+| `prelev`       | Blood sample collected                      |
+| `elisa`        | ELISA test result                           |
+| `wb`           | Western Blot result                         |
+| `cysti`        | Serological result for cysticercosis        |
+| `pds`          | Sampling weight                             |
+| `t_grap`       | Cluster size                                |
+| `t_vilag`      | Village population                          |
+
+### 🧾 EpicystiR_Total
+
+| Variable Name  | Description                                 |
+|----------------|---------------------------------------------|
+| `id`           | Participant identifier                      |
+| `dte`          | Survey date                                 |
+| `departement`  | department                                    |
+| `zone`        | Area of residence                           |
+| `age`          | Age                                         |
+| `age_cat`      | Age group                                   |
+| `sexe`         | Sex                                          |
+| `instruit`     | Literacy                                    |
+| `etude`        | Level of education                          |
+| `muslim`       | Muslim religion                             |
+| `ancien`       | Time living in village                      |
+| `lmain`        | Handwashing habit                           |
+| `lavcrudi`     | Washing raw vegetables                      |
+| `typ_eau`      | Tap water consumption                       |
+| `pluie`        | Rainwater consumption                       |
+| `cporc`        | Pork consumption                            |
+| `pleinair`     | Open-air defecation                             |
+| `cysti`        | Serological result for cysticercosis        |
+
+### 🧾 EpicystiR_Env (Environmental Data)
+
+| Variable Name  | Description                                 |
+|----------------|---------------------------------------------|
+| `idf`          | Household identifier                        |
+| `dte`          | Survey date                                 |
+| `departement`  | department                                    |
+| `vilag`        | Village                                     |
+| `resident`     | Number of household members                 |
+| `potable`      | Drinking water access                       |
+| `main`         | Presence of handwashing facility            |
+| `latrine`      | Presence of household latrines              |
+| `ordures`      | Wild garbage disposal nearby                |
+| `porcheri`     | Presence of pig farming nearby              |
+
+---
+
+## 🧰 Instructions for Use
+
+### 🔸 How to Access the Files
+
+You can download the data and scripts directly from the GitHub repository:
+
+1. Go to the project page on GitHub: [https://github.com/samk253/EpicystiR](https://github.com/samk253/EpicystiR)
+2. Click on the green **“Code”** button and choose **“Download ZIP”**.
+3. Extract the ZIP file.
+
+### 🔸 How to View Data 
+
+- The `.csv` files can be opened with **Excel**, **LibreOffice Calc**, or any statistical software like **R**, **Stata**, or **SPSS**.
+- The `.do` files are **Stata scripts**. You can open them with Stata.
+
+---
